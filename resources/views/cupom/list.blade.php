@@ -39,6 +39,30 @@
                     </div>
                 </div>
             </div>
+            <!-- Modal -->
+            <div class="modal fade" id="sendmail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Envio de e-mail</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                </div>
+                <form action="{{route('sendmail')}}">
+                    <div class="modal-body">
+                        <div class="col-md-12">
+                            <input class="form-control" type="email" name="email" id="email" placeholder="E-mail" />
+                            <input class="form-control" type="hidden" name="id" id="id" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+            </div>
         @include('layouts.footers.auth')
     </div>
 @endsection

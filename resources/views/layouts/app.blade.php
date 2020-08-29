@@ -52,6 +52,13 @@
             </script>
         @endif
         <script>
+                $('#sendmail').on('show.bs.modal', function (event) {
+                    var modal = $(this);
+                    var button = $(event.relatedTarget)
+                    var id = button.data('id');
+                    modal.find('#id').val(id);
+                });
+                
             $(document).ready(function(){
                 $('#price').mask('000.000.000.000.000,00', {reverse: true});
                 $('.form-control .price').mask('000.000.000.000.000,00', {reverse: true});

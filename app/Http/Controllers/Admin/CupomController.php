@@ -62,7 +62,7 @@ class CupomController extends Controller
             return \Carbon\Carbon::createFromDate($explodeData[0], $explodeData[1],$explodeData[2], $explodePoint[0],$explodePoint[1],$explodePoint[2])->locale('pt-BR')->isoFormat('dddd, MMMM Do YYYY, h:mm');
          })
          ->addColumn('actions', function($data){
-            return '<a class="btn btn-sucess" href="'.route('imprimir.post', ['id' => $data->id]).'" target="_blank">Imprimir</a>';
+            return '<a class="btn btn-sucess" href="'.route('imprimir.post', ['id' => $data->id]).'" target="_blank">Imprimir</a><button class="btn btn-info" data-toggle="modal" data-target="#sendmail" data-id="'.$data->id.'">Enviar por E-mail</button>';
         })
          ->rawColumns(['actions'])->make();
     }
@@ -125,7 +125,36 @@ class CupomController extends Controller
     {
         //
     }
+    public function sendMail(Request $request){
+        try {
+            $nota = Coupon::find($request->id);
+            $itens = CouponIten::where('cupom_id',$request->id)->get();
+            $products = [];
+            foreach($itens as $item){
+                $product = Product::find($item->product_id);
+                $product->itemDescription = $item->description;
+                $product->quantidade = $item->quantidade;
+                $product->priceEdit = $item->price;
+                array_push($products, $product->toArray());
+            }
+            $client = new \stdClass();
+            $client->nota_id = $nota->id;
+            $client->name = $nota->cliente;
+            $client->cpf = $nota->cpf;
+            $client->email =$request->email;
+            $client->products = $products;
 
+            return new \App\Mail\SendMailUser($client);
+            // return redirect()->back()->with('success', 'E-mail Enviado');
+            // \Illuminate\Support\Facedes\Mail::send(new App\Mail\SendMailUser($user));
+
+        } catch (\Throwable $th) {
+            
+            return redirect()->back()->with('error', 'Falha ao enviar o e-mail');
+        }
+        
+        
+    }
     /**
      * Show the form for editing the specified resource.
      *

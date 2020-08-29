@@ -42,5 +42,6 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin'], function () {
 	Route::post('/create/nota', ['as' => 'create.nota.post', 'uses' => 'CupomController@store']);
 	Route::get('/imprimir/nota', ['as' => 'imprimir.post', 'uses' => 'CupomController@imprimir']);
 	Route::post('/create/product', ['as' => 'create.product', 'uses' => 'ProductController@store']);
+	Route::get('/enviar-nota', ['as' => 'sendmail', 'uses' => 'CupomController@sendMail']);
 	
 });

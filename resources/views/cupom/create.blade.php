@@ -91,7 +91,6 @@
                             </tr>
                         </thead>
                         <tbody data-bind="foreach: tasks">
-                            
                             <tr>
                                 <td><input class="form-control" type="checkbox" data-bind="checked: isDone" /> </td>
                                 <td><input class="form-control" data-bind="value: id, disable: isDone" /> </td>
@@ -101,7 +100,6 @@
                                 <td> <input class="form-control" data-bind="value: info, disable: isDone" /></td>
                                 <td><a class="btn btn-danger" href="#" data-bind="click: $parent.removeTask">Remover da lista</a></td>
                             </tr>
-
                         </tbody>
                         </table>
 
