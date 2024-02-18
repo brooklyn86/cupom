@@ -30,7 +30,7 @@ class SendMailUser extends Mailable
      */
     public function build()
     {
-        $this->subject('Nota não fiscal - J|R Grifes Imports');
+        $this->subject('Nota não fiscal - Teresina Imports');
         $this->to($this->client->email, $this->client->name);
         return $this->markdown('mail.nota', [
             'user' => $this->client

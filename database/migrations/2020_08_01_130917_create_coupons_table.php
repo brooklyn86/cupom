@@ -16,6 +16,8 @@ class CreateCouponsTable extends Migration
         Schema::create('coupons', function (Blueprint $table) {
             $table->id();
             $table->string('cliente');
+            $table->string('cpf');
+            $table->string('endereco');
             $table->timestamps();
         });
     }

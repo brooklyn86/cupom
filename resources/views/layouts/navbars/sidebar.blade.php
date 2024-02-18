@@ -6,7 +6,7 @@
         </button>
         <!-- Brand -->
         <a class="pt-0" align="center" href="{{ route('home') }}">
-            <img src="/img/logo.jpeg" width="50%" alt="...">
+            <img src="/img/logo.png" width="50%" alt="...">
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-6 collapse-brand">
                         <a href="{{ route('home') }}">
-                            <img src="/img/logo.jpeg">
+                            <img src="/img/logo.png">
                         </a>
                     </div>
                     <div class="col-6 collapse-close">

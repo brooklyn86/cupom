@@ -56,10 +56,10 @@
         <table class="printer-ticket">
         <thead>
             <tr>
-                <th class="title" colspan="3"><img src="/img/logo.jpeg" width="100px"/></th>
+                <th class="title" colspan="3"><img src="/img/logo.png" width="100px"/></th>
             </tr>
             <tr>
-                <th colspan="3">J|R Grifes Imports</th>
+                <th colspan="3">Teresina Imports</th>
             </tr>
             <tr>
                 <th colspan="3">Av Raul Lopes, 880, Teresina-PI</th>
@@ -114,7 +114,7 @@
             </tr>
             <tr class="sup">
                 <td colspan="3" align="center">
-                    <b> @jr_grifes_imports <br/>
+                    <b> @teresina_imports <br/>
                 <b> (86) 9 94018346</b>
                 </td>
             </tr>
